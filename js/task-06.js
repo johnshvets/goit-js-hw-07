@@ -5,9 +5,13 @@ const onInputChange = event => {
   const valueLength = event.currentTarget.value.length;
   const currentClass = validationInputElement.className;
 
-  return valueLength !== validationLength
-    ? validationInputElement.classList.add('invalid')
-    : validationInputElement.classList.replace(currentClass, 'valid');
+  if (valueLength !== validationLength) {
+    validationInputElement.classList.remove('valid');
+    return validationInputElement.classList.add('invalid');
+  } else {
+    validationInputElement.classList.remove('invalid');
+    validationInputElement.classList.add('valid');
+  }
 };
 
 validationInputElement.addEventListener('blur', onInputChange);
