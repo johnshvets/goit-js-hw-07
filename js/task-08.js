@@ -11,15 +11,14 @@ const createBoxes = amount => {
   boxElement.innerHTML = '';
   let boxes = '';
 
-  if (amount > 0) {
+  if (amount > 0 && amount <= 100) {
     for (let i = 1; i <= amount; i += 1) {
       const rgb = `rgb(${randColor(256)}, ${randColor(256)}, ${randColor(
         256,
       )})`;
+      const size = 30 + i * 10 + 'px';
 
-      boxes += `<div style="width: ${30 + i * 10 + 'px'}; height: ${
-        30 + i * 10 + 'px'
-      }; background-color: ${rgb}"></div>`;
+      boxes += `<div style="width: ${size}; height: ${size}; background-color: ${rgb}"></div>`;
     }
 
     return boxElement.insertAdjacentHTML('beforeend', boxes);
