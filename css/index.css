@@ -1,0 +1,27 @@
+img {
+  display: block;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.task {
+  padding: 50px;
+}
+
+.gallery {
+  padding: 0;
+  max-width: 1200px;
+  display: flex;
+  background-color: rgb(229, 235, 149);
+}
+
+.gallery .item {
+  margin-right: 10px;
+}
+
+.gallery .item:last-child {
+  margin-right: 0;
+}
